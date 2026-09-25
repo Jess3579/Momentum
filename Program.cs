@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Momentum.Models;
 using Momentum.Data;
 
 namespace Momentum
@@ -18,6 +19,8 @@ namespace Momentum
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            builder.Services.AddDbContext<MomentumContext>(options =>
+                options.UseSqlServer(connectionString));
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

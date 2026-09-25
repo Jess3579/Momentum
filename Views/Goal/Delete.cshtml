@@ -1,0 +1,48 @@
+@model Momentum.Models.Goal
+
+@{
+    ViewData["Title"] = "Delete Goal";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="momentum-header">
+            <h1>Delete Goal</h1>
+            <p class="lead mb-0">
+                Make sure you want to remove this goal before continuing.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="momentum-card">
+            <h3 class="text-danger">Are you sure you want to delete this goal?</h3>
+
+            <dl class="row mt-3">
+                <dt class="col-sm-4">Title</dt>
+                <dd class="col-sm-8">@Model.Title</dd>
+
+                <dt class="col-sm-4">Category</dt>
+                <dd class="col-sm-8">@Model.Category</dd>
+
+                <dt class="col-sm-4">Target Date</dt>
+                <dd class="col-sm-8">@Model.TargetDate.ToString("M/d/yyyy")</dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="GoalId" />
+
+                <button type="submit" class="btn btn-danger">
+                    Delete Goal
+                </button>
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary">
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

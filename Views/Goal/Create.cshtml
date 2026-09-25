@@ -1,0 +1,56 @@
+@model Momentum.Models.Goal
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="momentum-header">
+            <h1>Create a Goal</h1>
+            <p class="lead mb-0">
+                Start with something meaningful and take it one step at a time.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Category" class="form-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="TargetDate" class="form-label"></label>
+                <input asp-for="TargetDate" class="form-control" />
+                <span asp-validation-for="TargetDate" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-success">
+                Create Goal
+            </button>
+
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                Back to Goals
+            </a>
+        </form>
+    </div>
+</div>

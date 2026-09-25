@@ -1,0 +1,47 @@
+@model Momentum.Models.Goal
+
+@{
+    ViewData["Title"] = "Goal Details";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="momentum-header">
+            <h1>Goal Details</h1>
+            <p class="lead mb-0">
+                Review the details of this goal.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="momentum-card">
+            <dl class="row">
+                <dt class="col-sm-4">Title</dt>
+                <dd class="col-sm-8">@Model.Title</dd>
+
+                <dt class="col-sm-4">Description</dt>
+                <dd class="col-sm-8">@Model.Description</dd>
+
+                <dt class="col-sm-4">Category</dt>
+                <dd class="col-sm-8">@Model.Category</dd>
+
+                <dt class="col-sm-4">Target Date</dt>
+                <dd class="col-sm-8">@Model.TargetDate.ToString("M/d/yyyy")</dd>
+            </dl>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.GoalId"
+               class="btn btn-success">
+                Edit Goal
+            </a>
+
+            <a asp-action="Index"
+               class="btn btn-outline-secondary">
+                Back to Goals
+            </a>
+        </div>
+    </div>
+</div>

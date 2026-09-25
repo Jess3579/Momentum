@@ -1,0 +1,58 @@
+@model Momentum.Models.Goal
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="momentum-header">
+            <h1>Edit Goal</h1>
+            <p class="lead mb-0">
+                Update your goal as your plans and priorities change.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="GoalId" />
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Category" class="form-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="TargetDate" class="form-label"></label>
+                <input asp-for="TargetDate" class="form-control" />
+                <span asp-validation-for="TargetDate" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-success">
+                Save Changes
+            </button>
+
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                Back to Goals
+            </a>
+        </form>
+    </div>
+</div>
